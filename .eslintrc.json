@@ -6,7 +6,10 @@
   },
   "parserOptions": {
     "ecmaVersion": 2024,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "overrides": [
     {

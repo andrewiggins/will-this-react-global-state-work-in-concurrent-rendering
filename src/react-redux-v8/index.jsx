@@ -1,8 +1,8 @@
-import { createStore } from 'redux-v3';
-import { Provider, connect } from 'react-redux-v5';
+import { createStore } from 'redux-v4';
+import { Provider, connect } from 'react-redux-v8';
 
 import { createRoot } from 'react-dom/client';
-import { createConnectApp } from './createConnectApp';
+import { createConnectApp } from '../react-redux-v5/createConnectApp';
 
 const App = createConnectApp({ createStore, connect, Provider });
 
