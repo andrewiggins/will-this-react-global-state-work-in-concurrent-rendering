@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const libraries = {
+  'react-state': '<a href="https://react.dev/">raw react state</a>',
   'react-redux': '<a href="https://react-redux.js.org">react-redux</a>',
   zustand: '<a href="https://github.com/pmndrs/zustand">zustand</a>',
   'react-tracked': '<a href="https://react-tracked.js.org">react-tracked</a>',

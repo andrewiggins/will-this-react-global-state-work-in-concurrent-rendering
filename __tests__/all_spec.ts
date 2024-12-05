@@ -33,7 +33,7 @@ const sleep = (ms) =>
 jest.setTimeout(20 * 1000);
 
 const names = [
-  // 'react-state',
+  'react-state',
   'react-redux',
   'tanstack-query',
   'zustand',
