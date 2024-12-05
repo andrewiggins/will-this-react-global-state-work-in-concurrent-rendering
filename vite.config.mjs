@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+import { transformAsync } from '@babel/core';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -56,7 +57,26 @@ const rootIndexHtml = template
 fs.writeFileSync('index.html', rootIndexHtml, 'utf8');
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    {
+      name: 'signals-transform',
+      async transform(code, id) {
+        if (id.includes('preact-signals') && id.match(/\.[tj]sx?$/)) {
+          const result = await transformAsync(code, {
+            plugins: [['module:@preact/signals-react-transform']],
+          });
+
+          if (result?.code) {
+            return {
+              code: result.code,
+              map: result.map,
+            };
+          }
+        }
+      },
+    },
+    react(),
+  ],
   build: {
     outDir: 'dist',
     modulePreload: false,

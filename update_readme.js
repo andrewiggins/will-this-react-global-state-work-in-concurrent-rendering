@@ -36,7 +36,9 @@ const libraries = {
   'mobx-react-lite':
     '<a href="https://github.com/mobxjs/mobx-react-lite">mobx-react-lite</a>',
   'tanstack-query':
-    '<a href="https://tanstack.com/query/latest">tanstack-query</a>',
+    '<a href="https://tanstack.com/query/latest">@tanstack/react-query</a>',
+  'preact-signals':
+    '<a href="https://npmjs.com/package/@preact/signals-react">@preact/signals-react</a>',
 };
 
 const numTests = 10;

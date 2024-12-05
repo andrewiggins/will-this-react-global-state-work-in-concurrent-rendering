@@ -39,6 +39,7 @@ const names = [
   'react-redux-v6',
   'react-redux-v7',
   'react-redux-v8',
+  'preact-signals',
   // 'tanstack-query',
   // 'zustand',
   // 'react-tracked',

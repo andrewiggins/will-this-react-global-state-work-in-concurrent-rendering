@@ -92,132 +92,131 @@ yarn jest:update
 ```
    With useTransition
      Level 1
-       ✓ No tearing finally on update (4824 ms)
-       ✓ No tearing finally on mount (7636 ms)
+       ✓ No tearing finally on update (4870 ms)
+       ✓ No tearing finally on mount (6593 ms)
      Level 2
-       ✓ No tearing temporarily on update (8804 ms)
-       ✓ No tearing temporarily on mount (7586 ms)
+       ✓ No tearing temporarily on update (8772 ms)
+       ✓ No tearing temporarily on mount (7594 ms)
      Level 3
-       ✓ Can interrupt render (time slicing) (3796 ms)
-       ✓ Can branch state (wip state) (5284 ms)
+       ✓ Can interrupt render (time slicing) (3768 ms)
+       ✓ Can branch state (wip state) (5329 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (9801 ms)
-       ✓ No tearing finally on mount (6742 ms)
+       ✓ No tearing finally on update (9782 ms)
+       ✓ No tearing finally on mount (5715 ms)
      Level 2
-       ✓ No tearing temporarily on update (14751 ms)
-       ✓ No tearing temporarily on mount (6644 ms)
+       ✓ No tearing temporarily on update (14746 ms)
+       ✓ No tearing temporarily on mount (6616 ms)
  react-redux
    With useTransition
      Level 1
-       ✓ No tearing finally on update (8159 ms)
-       ✓ No tearing finally on mount (4706 ms)
+       ✓ No tearing finally on update (8114 ms)
+       ✓ No tearing finally on mount (4636 ms)
      Level 2
-       ✓ No tearing temporarily on update (13162 ms)
-       ✓ No tearing temporarily on mount (4682 ms)
+       ✓ No tearing temporarily on update (13105 ms)
+       ✓ No tearing temporarily on mount (4668 ms)
      Level 3
-       ✕ Can interrupt render (time slicing) (8102 ms)
-       ✕ Can branch state (wip state) (6798 ms)
+       ✕ Can interrupt render (time slicing) (8095 ms)
+       ✕ Can branch state (wip state) (6790 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (9831 ms)
-       ✓ No tearing finally on mount (4705 ms)
+       ✓ No tearing finally on update (9784 ms)
+       ✓ No tearing finally on mount (5717 ms)
      Level 2
-       ✓ No tearing temporarily on update (14833 ms)
-       ✓ No tearing temporarily on mount (4655 ms)
+       ✓ No tearing temporarily on update (14827 ms)
+       ✓ No tearing temporarily on mount (4678 ms)
  react-redux-v5
    With useTransition
      Level 1
-       ✓ No tearing finally on update (8192 ms)
-       ✓ No tearing finally on mount (6650 ms)
+       ✓ No tearing finally on update (8200 ms)
+       ✓ No tearing finally on mount (6678 ms)
      Level 2
-       ✕ No tearing temporarily on update (13211 ms)
-       ✕ No tearing temporarily on mount (6611 ms)
+       ✕ No tearing temporarily on update (13179 ms)
+       ✕ No tearing temporarily on mount (5644 ms)
      Level 3
-       ✕ Can interrupt render (time slicing) (8200 ms)
-       ✕ Can branch state (wip state) (6789 ms)
+       ✕ Can interrupt render (time slicing) (8150 ms)
+       ✕ Can branch state (wip state) (6818 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (9876 ms)
-       ✓ No tearing finally on mount (6668 ms)
+       ✓ No tearing finally on update (9814 ms)
+       ✓ No tearing finally on mount (6667 ms)
      Level 2
-       ✓ No tearing temporarily on update (14849 ms)
-       ✕ No tearing temporarily on mount (6648 ms)
+       ✓ No tearing temporarily on update (14830 ms)
+       ✕ No tearing temporarily on mount (6646 ms)
  react-redux-v6
    With useTransition
      Level 1
-       ✓ No tearing finally on update (4721 ms)
-       ✓ No tearing finally on mount (5629 ms)
+       ✓ No tearing finally on update (4729 ms)
+       ✓ No tearing finally on mount (5638 ms)
      Level 2
-       ✓ No tearing temporarily on update (8835 ms)
-       ✓ No tearing temporarily on mount (6600 ms)
+       ✓ No tearing temporarily on update (8849 ms)
+       ✓ No tearing temporarily on mount (6650 ms)
      Level 3
-       ✓ Can interrupt render (time slicing) (3792 ms)
-       ✕ Can branch state (wip state) (9388 ms)
+       ✓ Can interrupt render (time slicing) (3776 ms)
+       ✕ Can branch state (wip state) (9295 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (9804 ms)
-       ✓ No tearing finally on mount (5718 ms)
+       ✓ No tearing finally on update (9827 ms)
+       ✓ No tearing finally on mount (5713 ms)
      Level 2
-       ✓ No tearing temporarily on update (14939 ms)
-       ✓ No tearing temporarily on mount (5672 ms)
+       ✓ No tearing temporarily on update (14843 ms)
+       ✓ No tearing temporarily on mount (5641 ms)
  react-redux-v7
    With useTransition
      Level 1
-       ✓ No tearing finally on update (8216 ms)
-       ✓ No tearing finally on mount (5685 ms)
+       ✓ No tearing finally on update (8210 ms)
+       ✓ No tearing finally on mount (6713 ms)
      Level 2
-       ✕ No tearing temporarily on update (13128 ms)
-       ✕ No tearing temporarily on mount (6665 ms)
+       ✕ No tearing temporarily on update (13100 ms)
+       ✕ No tearing temporarily on mount (6658 ms)
      Level 3
-       ✕ Can interrupt render (time slicing) (8243 ms)
-       ✕ Can branch state (wip state) (6864 ms)
+       ✕ Can interrupt render (time slicing) (8089 ms)
+       ✕ Can branch state (wip state) (6808 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (10535 ms)
-       ✓ No tearing finally on mount (6658 ms)
+       ✓ No tearing finally on update (10504 ms)
+       ✓ No tearing finally on mount (6666 ms)
      Level 2
-       ✓ No tearing temporarily on update (14668 ms)
-       ✕ No tearing temporarily on mount (6645 ms)
+       ✓ No tearing temporarily on update (14634 ms)
+       ✕ No tearing temporarily on mount (6656 ms)
  react-redux-v8
    With useTransition
      Level 1
-       ✓ No tearing finally on update (8198 ms)
-       ✓ No tearing finally on mount (4693 ms)
+       ✓ No tearing finally on update (8214 ms)
+       ✓ No tearing finally on mount (4687 ms)
      Level 2
-       ✕ No tearing temporarily on update (13185 ms)
-       ✓ No tearing temporarily on mount (4664 ms)
+       ✕ No tearing temporarily on update (13203 ms)
+       ✓ No tearing temporarily on mount (4671 ms)
      Level 3
-       ✕ Can interrupt render (time slicing) (8197 ms)
-       ✕ Can branch state (wip state) (6831 ms)
+       ✕ Can interrupt render (time slicing) (8158 ms)
+       ✕ Can branch state (wip state) (6807 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (11494 ms)
-       ✓ No tearing finally on mount (4693 ms)
+       ✓ No tearing finally on update (11510 ms)
+       ✓ No tearing finally on mount (4774 ms)
      Level 2
-       ✓ No tearing temporarily on update (16523 ms)
-       ✓ No tearing temporarily on mount (4699 ms)
- use-context-selector
+       ✓ No tearing temporarily on update (16739 ms)
+       ✓ No tearing temporarily on mount (4662 ms)
+ preact-signals
    With useTransition
      Level 1
-       ✓ No tearing finally on update (5733 ms)
-       ✓ No tearing finally on mount (9631 ms)
+       ✓ No tearing finally on update (8153 ms)
+       ✓ No tearing finally on mount (4670 ms)
      Level 2
-       ✓ No tearing temporarily on update (8781 ms)
-       ✓ No tearing temporarily on mount (9612 ms)
+       ✓ No tearing temporarily on update (13161 ms)
+       ✓ No tearing temporarily on mount (4684 ms)
      Level 3
-       ✓ Can interrupt render (time slicing) (3749 ms)
-       ✓ Can branch state (wip state) (8338 ms)
+       ✕ Can interrupt render (time slicing) (8125 ms)
+       ✕ Can branch state (wip state) (6807 ms)
    With useDeferredValue
      Level 1
-       ✓ No tearing finally on update (15650 ms)
-       ✓ No tearing finally on mount (6646 ms)
+       ✓ No tearing finally on update (9822 ms)
+       ✓ No tearing finally on mount (4674 ms)
      Level 2
-       ✓ No tearing temporarily on update (19692 ms)
-       ✓ No tearing temporarily on mount (6577 ms)
+       ✓ No tearing temporarily on update (14837 ms)
+       ✓ No tearing temporarily on mount (4678 ms)
 
 ```
-
 </details>
 
 <table>
@@ -301,13 +300,13 @@ yarn jest:update
 		<td>✅</td>
 	</tr>
 	<tr>
-		<th><a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer)</th>
+		<th><a href="https://npmjs.com/package/@preact/signals-react">@preact/signals-react</a></th>
 		<td>✅</td>
 		<td>✅</td>
 		<td>✅</td>
 		<td>✅</td>
-		<td>✅</td>
-		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
 		<td>✅</td>
 		<td>✅</td>
 		<td>✅</td>
