@@ -10,6 +10,7 @@ import {
   renderApp,
 } from '../common';
 
+/** @type {import('effector').Event<import('../common').Action>} */
 const dispatch = createEvent();
 const $store = createStore(initialState).on(dispatch, reducer);
 

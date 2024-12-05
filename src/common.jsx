@@ -212,9 +212,9 @@ export function renderApp(
   useCount,
   useIncrement,
   useDouble,
-  Root = React.Fragment,
-  componentWrapper = React.memo,
-  mainWrapper = (fn) => fn,
+  Root,
+  componentWrapper,
+  mainWrapper,
 ) {
   const App = createApp(
     useCount,

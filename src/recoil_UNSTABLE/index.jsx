@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import {
   RecoilRoot,
   useRecoilState_TRANSITION_SUPPORT_UNSTABLE as useRecoilState,

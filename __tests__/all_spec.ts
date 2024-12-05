@@ -1,6 +1,24 @@
+/// <reference types="jest" />
 /* global page, jestPuppeteer */
 
 import { NUM_CHILD_COMPONENTS } from '../src/common';
+
+declare global {
+  const page: import('puppeteer').Page;
+  const jestPuppeteer: {
+    resetBrowser: () => Promise<void>;
+  };
+
+  // Extend the Jest expect object with custom matchers
+  namespace jest {
+    interface Matchers<R> {
+      toMatchElement(
+        selector: string,
+        options?: { text?: any; timeout?: number },
+      ): R;
+    }
+  }
+}
 
 const NUM_COMPONENTS = NUM_CHILD_COMPONENTS + 1; // plus one in <Main>
 const ids = [...Array(NUM_COMPONENTS).keys()];
@@ -160,7 +178,7 @@ names.forEach((name) => {
               );
             }),
           );
-          const delays = [];
+          const delays: number[] = [];
           for (let loop = 0; loop < REPEAT; loop += 1) {
             const start = Date.now();
             await page.click('#transitionIncrement');
@@ -199,11 +217,13 @@ names.forEach((name) => {
           });
           // Make sure that while isPending true, previous state displayed
           await expect(
-            page.evaluate(() => document.querySelector('#mainCount').innerHTML),
+            page.evaluate(
+              () => document.querySelector('#mainCount')?.innerHTML,
+            ),
           ).resolves.toBe('1');
           await expect(
             page.evaluate(
-              () => document.querySelector('.count:first-of-type').innerHTML,
+              () => document.querySelector('.count:first-of-type')?.innerHTML,
             ),
           ).resolves.toBe('1');
           // click normal double button
