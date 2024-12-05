@@ -1,0 +1,10 @@
+diff --git a/node_modules/symbol-observable/index.js b/node_modules/symbol-observable/index.js
+index 1aefd75..0ceaa1b 100644
+--- a/node_modules/symbol-observable/index.js
++++ b/node_modules/symbol-observable/index.js
+@@ -1,4 +1,4 @@
+ /* global window */
+ 'use strict';
+ 
+-module.exports = require('./ponyfill')(global || window || this);
++module.exports = require('./ponyfill')(globalThis || window || this);

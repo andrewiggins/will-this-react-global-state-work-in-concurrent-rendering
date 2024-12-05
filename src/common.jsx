@@ -8,7 +8,7 @@ import React, {
 import { createRoot } from 'react-dom/client';
 
 // block for about 20 ms
-const syncBlock = () => {
+export const syncBlock = () => {
   const start = performance.now();
   while (performance.now() - start < 20) {
     // empty
