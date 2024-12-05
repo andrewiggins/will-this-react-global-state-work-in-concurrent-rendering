@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, 'dist', process.env.NAME || 'react-redux'),
     filename: '[name].js',
@@ -20,6 +20,9 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.json', '.wasm'],
+  },
   module: {
     rules: [{
       test: /\.jsx?$/,
