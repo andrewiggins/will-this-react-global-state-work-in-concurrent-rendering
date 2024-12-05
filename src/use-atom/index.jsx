@@ -10,8 +10,12 @@ import {
   renderApp,
 } from '../common';
 
+/** @import { WritableAtom } from 'jotai'; */
+/** @import { Action } from '../common'; */
+
 const globalState = atom(initialState);
 
+/** @type {WritableAtom<number, [Action | undefined], void>} */
 const countState = atom(
   (get) => selectCount(get(globalState)),
   (get, set, action) => {

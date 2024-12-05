@@ -15,11 +15,19 @@ const syncBlock = () => {
   }
 };
 
+/** @type {State} state */
 export const initialState = {
   count: 0,
 };
 
-export const reducer = (state = initialState, action = {}) => {
+/**
+ * @typedef {{ count: number }} State
+ * @typedef {{ type: string }} Action
+ * @param {State} state
+ * @param {Action} action
+ * @returns {State}
+ */
+export const reducer = (state = initialState, action = { type: 'INITIAL' }) => {
   switch (action.type) {
     case 'increment':
       return {
@@ -36,8 +44,11 @@ export const reducer = (state = initialState, action = {}) => {
   }
 };
 
+/** @type {(state: State) => number} */
 export const selectCount = (state) => state.count;
+/** @type {{ type: 'increment' }} */
 export const incrementAction = { type: 'increment' };
+/** @type {{ type: 'double' }} */
 export const doubleAction = { type: 'double' };
 
 export const NUM_CHILD_COMPONENTS = 50;
@@ -48,23 +59,23 @@ const ids = [...Array(NUM_CHILD_COMPONENTS).keys()];
 export const useCheckTearing = () => {
   useEffect(() => {
     try {
-      const counts = ids.map((i) =>
-        Number(
-          document.querySelector(`.count:nth-of-type(${i + 1})`).innerHTML,
-        ),
-      );
-      counts.push(Number(document.getElementById('mainCount').innerHTML));
+      const counts = ids.map((i) => {
+        const count = document.querySelector(`.count:nth-of-type(${i + 1})`);
+        if (!count) throw new Error('count not found');
+        return Number(count.innerHTML);
+      });
+
+      const mainCount = document.getElementById('mainCount');
+      if (!mainCount) throw new Error('count not found');
+      counts.push(Number(mainCount.innerHTML));
+
       if (!counts.every((c) => c === counts[0])) {
         console.error('count mismatch', counts);
         document.title += ' TEARED';
       }
     } catch (e) {
       // Running this code before rendering the counts will throw an error. Ignore it.
-      if (
-        !e.message.includes(
-          "Cannot read properties of null (reading 'innerHTML')",
-        )
-      ) {
+      if (e.message !== 'count not found') {
         throw e;
       }
     }
@@ -75,7 +86,7 @@ export const useCheckTearing = () => {
  * @param {() => number} useCount
  * @param {() => () => void} useIncrement
  * @param {() => () => void} useDouble
- * @param {React.FC<{ children?: React.ReactNode }>} [Root]
+ * @param {React.FC<{ children: React.ReactNode }>} [Root]
  * @param {(c: React.FC) => React.FC} [componentWrapper]
  * @param {(c: React.FC) => React.FC} [mainWrapper]
  * @returns {React.FC}

@@ -12,6 +12,11 @@ import {
 
 const globalState = atom(initialState);
 
+/**
+ * @import { WritableAtom } from 'jotai';
+ * @import { Action } from '../common'
+ * @type {WritableAtom<number, [Action | undefined], void>}
+ */
 const countState = atom(
   (get) => selectCount(get(globalState)),
   (get, set, action) => {

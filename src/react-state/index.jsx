@@ -9,8 +9,15 @@ import {
   renderApp,
 } from '../common';
 
-const StateCtx = createContext();
-const DispatchCtx = createContext();
+/**
+ * @import { Context, Dispatch } from "react";
+ * @import { State, Action } from "../common"
+ */
+
+/** @type {Context<State>} */
+const StateCtx = createContext(/** @type {any} */ (null));
+/** @type {Context<Dispatch<Action>>} */
+const DispatchCtx = createContext(/** @type {any} */ (null));
 
 const useCount = () => selectCount(useContext(StateCtx));
 

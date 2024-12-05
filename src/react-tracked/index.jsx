@@ -10,6 +10,10 @@ import {
   renderApp,
 } from '../common';
 
+/**
+ * @import { State, Action } from "../common"
+ * @type {() => [State, import('react').Dispatch<Action>]}
+ */
 const useValue = () => React.useReducer(reducer, initialState);
 
 const {

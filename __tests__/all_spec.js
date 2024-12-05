@@ -17,6 +17,7 @@ jest.setTimeout(20 * 1000);
 const names = [
   // 'react-state',
   'react-redux',
+  'tanstack-query',
   'zustand',
   'react-tracked',
   'constate',

@@ -10,7 +10,16 @@ import {
   renderApp,
 } from '../common';
 
-const context = createContext(null);
+/**
+ * @import {Dispatch} from 'react'
+ * @import { State, Action } from '../common'
+ */
+
+/**
+ * @typedef {[State, Dispatch<Action>]} Value
+ * @type {import('use-context-selector').Context<Value>}
+ */
+const context = createContext(/** @type {any} */ (null));
 
 const useCount = () => useContextSelector(context, (v) => selectCount(v[0]));
 

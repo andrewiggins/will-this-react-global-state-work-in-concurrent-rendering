@@ -8,11 +8,10 @@ import {
   renderApp,
 } from '../common';
 
-const { dispatch, useGlobalState } = createStore(reducer, initialState);
+const { dispatch, useStoreState } = createStore(reducer, initialState);
 
 const useCount = () => {
-  const [count] = useGlobalState('count');
-  return count;
+  return useStoreState('count');
 };
 
 const useIncrement = () => () => dispatch(incrementAction);

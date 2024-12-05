@@ -10,6 +10,11 @@ import {
   renderApp,
 } from '../common';
 
+/**
+ * @import { Dispatch } from "react";
+ * @import { State, Action } from "../common"
+ * @type {() => [State, Dispatch<Action>]}
+ */
 const useValue = () => React.useReducer(reducer, initialState);
 const [Root, useValueContext] = createUseContext(useValue);
 
