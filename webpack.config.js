@@ -24,22 +24,26 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', '.wasm'],
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      resolve: {
-        fullySpecified: false,
-      },
-      exclude: /node_modules\/(?!(@apollo)\/).*/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['@babel/preset-env', { modules: false }],
-            '@babel/preset-react',
-          ],
+    rules: [
+      {
+        test: /\.jsx?$/,
+        resolve: {
+          fullySpecified: false,
         },
-      }],
-    }],
+        exclude: /node_modules\/(?!(@apollo)\/).*/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', { modules: false }],
+                '@babel/preset-react',
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
     port: process.env.PORT || '8080',

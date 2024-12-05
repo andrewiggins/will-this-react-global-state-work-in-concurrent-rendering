@@ -11,8 +11,7 @@ import {
 } from '../common';
 
 const dispatch = createEvent();
-const $store = createStore(initialState)
-  .on(dispatch, reducer);
+const $store = createStore(initialState).on(dispatch, reducer);
 
 const $count = $store.map((value) => selectCount(value));
 

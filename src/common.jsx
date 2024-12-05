@@ -47,9 +47,11 @@ const ids = [...Array(NUM_CHILD_COMPONENTS).keys()];
 export const useCheckTearing = () => {
   useEffect(() => {
     try {
-      const counts = ids.map((i) => Number(
-        document.querySelector(`.count:nth-of-type(${i + 1})`).innerHTML,
-      ));
+      const counts = ids.map((i) =>
+        Number(
+          document.querySelector(`.count:nth-of-type(${i + 1})`).innerHTML,
+        ),
+      );
       counts.push(Number(document.getElementById('mainCount').innerHTML));
       if (!counts.every((c) => c === counts[0])) {
         console.error('count mismatch', counts);
@@ -114,10 +116,18 @@ export const createApp = (
         <button type="button" id="transitionHide" onClick={transitionHide}>
           Hide in transition
         </button>
-        <button type="button" id="transitionShowCounter" onClick={transitionShowCounter}>
+        <button
+          type="button"
+          id="transitionShowCounter"
+          onClick={transitionShowCounter}
+        >
           Show counter in transition
         </button>
-        <button type="button" id="transitionShowDeferred" onClick={transitionShowDeferred}>
+        <button
+          type="button"
+          id="transitionShowDeferred"
+          onClick={transitionShowDeferred}
+        >
           Show deferred counter in transition
         </button>
         <button type="button" id="normalIncrement" onClick={increment}>
@@ -126,13 +136,25 @@ export const createApp = (
         <button type="button" id="normalDouble" onClick={doDouble}>
           Double count normally
         </button>
-        <button type="button" id="transitionIncrement" onClick={transitionIncrement}>
+        <button
+          type="button"
+          id="transitionIncrement"
+          onClick={transitionIncrement}
+        >
           Increment count in transition
         </button>
-        <button type="button" id="stopAutoIncrement" onClick={stopAutoIncrement}>
+        <button
+          type="button"
+          id="stopAutoIncrement"
+          onClick={stopAutoIncrement}
+        >
           Stop auto incrementing count
         </button>
-        <button type="button" id="startAutoIncrement" onClick={startAutoIncrement}>
+        <button
+          type="button"
+          id="startAutoIncrement"
+          onClick={startAutoIncrement}
+        >
           Start auto incrementing count
         </button>
         <span id="pending">{isPending && 'Pending...'}</span>
@@ -140,7 +162,9 @@ export const createApp = (
         {mode === 'counter' && ids.map((id) => <Counter key={id} />)}
         {mode === 'deferred' && ids.map((id) => <DeferredCounter key={id} />)}
         <h1>Main</h1>
-        <div id="mainCount" className="count">{mode === 'deferred' ? deferredCount : count}</div>
+        <div id="mainCount" className="count">
+          {mode === 'deferred' ? deferredCount : count}
+        </div>
       </div>
     );
   });

@@ -5,11 +5,16 @@ const libraries = {
   zustand: '<a href="https://github.com/pmndrs/zustand">zustand</a>',
   'react-tracked': '<a href="https://react-tracked.js.org">react-tracked</a>',
   constate: '<a href="https://github.com/diegohaz/constate">constate</a>',
-  'react-hooks-global-state': '<a href="https://github.com/dai-shi/react-hooks-global-state">react-hooks-global-state</a>',
-  'use-context-selector-base': '<a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer, w/o useContextUpdate)',
-  'use-context-selector': '<a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer)',
-  'use-subscription': '<a href="https://github.com/facebook/react/tree/master/packages/use-subscription">use-subscription</a> (w/ redux)',
-  'apollo-client': '<a href="https://github.com/apollographql/apollo-client">apollo-client</a>',
+  'react-hooks-global-state':
+    '<a href="https://github.com/dai-shi/react-hooks-global-state">react-hooks-global-state</a>',
+  'use-context-selector-base':
+    '<a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer, w/o useContextUpdate)',
+  'use-context-selector':
+    '<a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer)',
+  'use-subscription':
+    '<a href="https://github.com/facebook/react/tree/master/packages/use-subscription">use-subscription</a> (w/ redux)',
+  'apollo-client':
+    '<a href="https://github.com/apollographql/apollo-client">apollo-client</a>',
   recoil: '<a href="https://recoiljs.org">recoil</a>',
   recoil_UNSTABLE: '<a href="https://recoiljs.org">recoil (UNSTABLE)</a>',
   jotai: '<a href="https://github.com/pmndrs/jotai">jotai</a>',
@@ -19,13 +24,18 @@ const libraries = {
   'react-rxjs': '<a href="https://react-rxjs.org">react-rxjs</a>',
   simplux: '<a href="https://github.com/MrWolfZ/simplux">simplux</a>',
   'react-query': '<a href="https://react-query.tanstack.com/">react-query</a>',
-  'mobx-react-lite': '<a href="https://github.com/mobxjs/mobx-react-lite">mobx-react-lite</a>',
+  'mobx-react-lite':
+    '<a href="https://github.com/mobxjs/mobx-react-lite">mobx-react-lite</a>',
 };
 
 const numTests = 10;
 
-function wrap(content, tag) { return `<${tag}>${content}</${tag}>`; }
-function check(status) { return status === 'failed' ? ':x:' : ':white_check_mark:'; }
+function wrap(content, tag) {
+  return `<${tag}>${content}</${tag}>`;
+}
+function check(status) {
+  return status === 'failed' ? ':x:' : ':white_check_mark:';
+}
 
 // Get results into an array of test with a 2nd dimension by test/fail
 const results = JSON.parse(fs.readFileSync('./outfile.json', 'utf8'));
@@ -47,7 +57,9 @@ testResults.forEach((result) => {
     return;
   }
   const th = wrap(libraries[result[0].title], 'th');
-  const tds = result.map((test) => `\t\t${wrap(check(test.status), 'td')}\n`).join('');
+  const tds = result
+    .map((test) => `\t\t${wrap(check(test.status), 'td')}\n`)
+    .join('');
   sub += `\t<tr>\n\t\t${th}\n${tds}\t</tr>\n`;
 });
 
@@ -73,7 +85,9 @@ lines = lines.filter((line, ix) => ix % 3 === 0);
 let readme = fs.readFileSync('./README.md', 'utf8');
 readme = readme.replace(
   /<table>([\s\S]*?)<\/table>/,
-  `<table>\n<tr><th>Test</th>${Array.from(Array(numTests).keys()).map((i) => `<th>${i + 1}</th>`).join('')}</tr>\n${sub}\n</table>`,
+  `<table>\n<tr><th>Test</th>${Array.from(Array(numTests).keys())
+    .map((i) => `<th>${i + 1}</th>`)
+    .join('')}</tr>\n${sub}\n</table>`,
 );
 readme = readme.replace(
   /<details>([\s\S]*?)<\/details>/,

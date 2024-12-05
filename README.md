@@ -54,6 +54,7 @@ yarn run jest
 ```
 
 To automatically run tests and update the README.md on OSX:
+
 ```
 yarn jest:json
 yarn jest:update
@@ -432,6 +433,7 @@ yarn jest:update
        ✓ No tearing temporarily on mount (6568 ms)
 
 ```
+
 </details>
 
 <table>

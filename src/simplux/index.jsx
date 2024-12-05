@@ -1,12 +1,12 @@
 import React from 'react';
-import { createSimpluxModule, createMutations, createSelectors } from '@simplux/core';
+import {
+  createSimpluxModule,
+  createMutations,
+  createSelectors,
+} from '@simplux/core';
 import { SimpluxProvider, useSimplux } from '@simplux/react';
 
-import {
-  initialState,
-  selectCount,
-  createApp,
-} from '../common';
+import { initialState, selectCount, createApp } from '../common';
 
 const counterModule = createSimpluxModule({
   name: 'counter',
@@ -34,10 +34,6 @@ const useIncrement = () => () => counter.increment();
 
 const useDouble = () => () => counter.double();
 
-const Root = ({ children }) => (
-  <SimpluxProvider>
-    {children}
-  </SimpluxProvider>
-);
+const Root = ({ children }) => <SimpluxProvider>{children}</SimpluxProvider>;
 
 export default createApp(useCount, useIncrement, useDouble, Root);

@@ -28,9 +28,7 @@ const Root = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   return (
     <DispatchCtx.Provider value={dispatch}>
-      <StateCtx.Provider value={state}>
-        {children}
-      </StateCtx.Provider>
+      <StateCtx.Provider value={state}>{children}</StateCtx.Provider>
     </DispatchCtx.Provider>
   );
 };

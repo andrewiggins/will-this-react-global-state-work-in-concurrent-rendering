@@ -8,9 +8,10 @@ const REPEAT = 5;
 
 const port = process.env.PORT || '8080';
 
-const sleep = (ms) => new Promise((r) => {
-  setTimeout(r, ms);
-});
+const sleep = (ms) =>
+  new Promise((r) => {
+    setTimeout(r, ms);
+  });
 jest.setTimeout(20 * 1000);
 
 const names = [
@@ -52,23 +53,33 @@ names.forEach((name) => {
         it('No tearing finally on update', async () => {
           await page.click('#transitionShowCounter');
           // wait until all counts become zero
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '0',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '0',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           for (let loop = 0; loop < REPEAT; loop += 1) {
             await page.click('#transitionIncrement');
             await sleep(100);
           }
           // check if all counts become REPEAT
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: `${REPEAT}`,
-              timeout: 10 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: `${REPEAT}`,
+                  timeout: 10 * 1000,
+                },
+              );
+            }),
+          );
         });
 
         it('No tearing finally on mount', async () => {
@@ -78,13 +89,20 @@ names.forEach((name) => {
           await sleep(1000);
           await page.click('#stopAutoIncrement');
           await sleep(2000);
-          const count = page.evaluate(() => document.querySelector('.count:first-of-type'));
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: count,
-              timeout: 10 * 1000,
-            });
-          }));
+          const count = page.evaluate(() =>
+            document.querySelector('.count:first-of-type'),
+          );
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: count,
+                  timeout: 10 * 1000,
+                },
+              );
+            }),
+          );
         });
       });
 
@@ -92,12 +110,17 @@ names.forEach((name) => {
         it('No tearing temporarily on update', async () => {
           await page.click('#transitionShowCounter');
           // wait until all counts become zero
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '0',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '0',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           for (let loop = 0; loop < REPEAT; loop += 1) {
             await page.click('#transitionIncrement');
             await sleep(100);
@@ -125,12 +148,17 @@ names.forEach((name) => {
         it('Can interrupt render (time slicing)', async () => {
           await page.click('#transitionShowCounter');
           // wait until all counts become zero
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '0',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '0',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           const delays = [];
           for (let loop = 0; loop < REPEAT; loop += 1) {
             const start = Date.now();
@@ -149,12 +177,17 @@ names.forEach((name) => {
         it('Can branch state (wip state)', async () => {
           await page.click('#transitionShowCounter');
           await page.click('#transitionIncrement');
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '1',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '1',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           await page.click('#transitionIncrement');
           await sleep(100);
           await page.click('#transitionIncrement');
@@ -164,24 +197,40 @@ names.forEach((name) => {
             timeout: 2 * 1000,
           });
           // Make sure that while isPending true, previous state displayed
-          await expect(page.evaluate(() => document.querySelector('#mainCount').innerHTML)).resolves.toBe('1');
-          await expect(page.evaluate(() => document.querySelector('.count:first-of-type').innerHTML)).resolves.toBe('1');
+          await expect(
+            page.evaluate(() => document.querySelector('#mainCount').innerHTML),
+          ).resolves.toBe('1');
+          await expect(
+            page.evaluate(
+              () => document.querySelector('.count:first-of-type').innerHTML,
+            ),
+          ).resolves.toBe('1');
           // click normal double button
           await page.click('#normalDouble');
           // check if all counts become doubled before increment
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '2',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '2',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           // check if all counts become doubled after increment
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '6',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '6',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
         });
       });
     });
@@ -191,23 +240,33 @@ names.forEach((name) => {
         it('No tearing finally on update', async () => {
           await page.click('#transitionShowDeferred');
           // wait until all counts become zero
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '0',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '0',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           for (let loop = 0; loop < REPEAT; loop += 1) {
             await page.click('#normalIncrement');
             await sleep(100);
           }
           // check if all counts become REPEAT
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: `${REPEAT}`,
-              timeout: 10 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: `${REPEAT}`,
+                  timeout: 10 * 1000,
+                },
+              );
+            }),
+          );
         });
 
         it('No tearing finally on mount', async () => {
@@ -217,13 +276,20 @@ names.forEach((name) => {
           await sleep(1000);
           await page.click('#stopAutoIncrement');
           await sleep(2000);
-          const count = page.evaluate(() => document.querySelector('.count:first-of-type'));
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: count,
-              timeout: 10 * 1000,
-            });
-          }));
+          const count = page.evaluate(() =>
+            document.querySelector('.count:first-of-type'),
+          );
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: count,
+                  timeout: 10 * 1000,
+                },
+              );
+            }),
+          );
         });
       });
 
@@ -231,12 +297,17 @@ names.forEach((name) => {
         it('No tearing temporarily on update', async () => {
           await page.click('#transitionShowDeferred');
           // wait until all counts become zero
-          await Promise.all(ids.map(async (i) => {
-            await expect(page).toMatchElement(`.count:nth-of-type(${i + 1})`, {
-              text: '0',
-              timeout: 5 * 1000,
-            });
-          }));
+          await Promise.all(
+            ids.map(async (i) => {
+              await expect(page).toMatchElement(
+                `.count:nth-of-type(${i + 1})`,
+                {
+                  text: '0',
+                  timeout: 5 * 1000,
+                },
+              );
+            }),
+          );
           for (let loop = 0; loop < REPEAT; loop += 1) {
             await page.click('#normalIncrement');
             await sleep(100);

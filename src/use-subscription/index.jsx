@@ -13,10 +13,15 @@ import {
 const store = createStore(reducer);
 
 const useCount = () => {
-  const count = useSubscription(useMemo(() => ({
-    getCurrentValue: () => selectCount(store.getState()),
-    subscribe: (callback) => store.subscribe(callback),
-  }), []));
+  const count = useSubscription(
+    useMemo(
+      () => ({
+        getCurrentValue: () => selectCount(store.getState()),
+        subscribe: (callback) => store.subscribe(callback),
+      }),
+      [],
+    ),
+  );
   return count;
 };
 

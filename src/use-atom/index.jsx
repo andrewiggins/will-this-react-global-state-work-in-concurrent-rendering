@@ -1,10 +1,5 @@
 import React, { useCallback } from 'react';
-import {
-  Provider,
-  atom,
-  useAtom,
-  useSetAtom,
-} from 'use-atom';
+import { Provider, atom, useAtom, useSetAtom } from 'use-atom';
 
 import {
   reducer,
@@ -43,10 +38,6 @@ const useDouble = () => {
   }, [dispatch]);
 };
 
-const Root = ({ children }) => (
-  <Provider>
-    {children}
-  </Provider>
-);
+const Root = ({ children }) => <Provider>{children}</Provider>;
 
 export default createApp(useCount, useIncrement, useDouble, Root);

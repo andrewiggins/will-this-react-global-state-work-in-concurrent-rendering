@@ -2,7 +2,8 @@ import React from 'react';
 import {
   QueryClient,
   QueryClientProvider,
-  useQuery, useQueryClient,
+  useQuery,
+  useQueryClient,
 } from 'react-query';
 
 import {
@@ -35,26 +36,22 @@ const useCount = () => {
 
 const useIncrement = () => {
   const queryClient = useQueryClient();
-  const increment = () => queryClient.setQueryData(
-    queryKey,
-    (prev) => reducer(prev, incrementAction),
-  );
+  const increment = () =>
+    queryClient.setQueryData(queryKey, (prev) =>
+      reducer(prev, incrementAction),
+    );
   return increment;
 };
 
 const useDouble = () => {
   const queryClient = useQueryClient();
-  const doDouble = () => queryClient.setQueryData(
-    queryKey,
-    (prev) => reducer(prev, doubleAction),
-  );
+  const doDouble = () =>
+    queryClient.setQueryData(queryKey, (prev) => reducer(prev, doubleAction));
   return doDouble;
 };
 
 const Root = ({ children }) => (
-  <QueryClientProvider client={client}>
-    {children}
-  </QueryClientProvider>
+  <QueryClientProvider client={client}>{children}</QueryClientProvider>
 );
 
 export default createApp(useCount, useIncrement, useDouble, Root);

@@ -41,11 +41,12 @@ const client = new ApolloClient({
 
 const useCount = () => {
   const { loading, error, data } = useQuery(COUNT_QUERY);
-  return (!loading && !error && data) ? selectCount(data) : 0;
+  return !loading && !error && data ? selectCount(data) : 0;
 };
 
 const useIncrement = () => {
-  const increment = () => currentState(reducer(currentState(), incrementAction));
+  const increment = () =>
+    currentState(reducer(currentState(), incrementAction));
   return increment;
 };
 
@@ -55,9 +56,7 @@ const useDouble = () => {
 };
 
 const Root = ({ children }) => (
-  <ApolloProvider client={client}>
-    {children}
-  </ApolloProvider>
+  <ApolloProvider client={client}>{children}</ApolloProvider>
 );
 
 export default createApp(useCount, useIncrement, useDouble, Root);

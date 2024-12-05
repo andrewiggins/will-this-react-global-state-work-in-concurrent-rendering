@@ -48,10 +48,6 @@ const useDouble = () => {
   }, [dispatch]);
 };
 
-const Root = ({ children }) => (
-  <RecoilRoot>
-    {children}
-  </RecoilRoot>
-);
+const Root = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
 
 export default createApp(useCount, useIncrement, useDouble, Root);
