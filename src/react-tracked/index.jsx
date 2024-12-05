@@ -20,7 +20,7 @@ const {
   Provider: Root,
   useSelector,
   useUpdate: useDispatch,
-} = createContainer(useValue, true);
+} = createContainer(useValue, { concurrentMode: true });
 
 const useCount = () => useSelector(selectCount);
 
