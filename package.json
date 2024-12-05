@@ -13,7 +13,7 @@
     "build": "vite build",
     "preview": "vite preview --port 8080",
     "test": "cross-env BABEL_ENV=jest jest",
-    "test:json": "cross-env BABEL_ENV=jest jest --json --outputFile=./outfile.json",
+    "test:json": "cross-env BABEL_ENV=jest jest --json --outputFile=./outfile.json --no-color 2> ./outfile_raw.txt",
     "test:update": "node update_readme.js",
     "lint": "npm run tsc && npm run eslint && npm run check-format",
     "check-format": "prettier --check .",

@@ -1,5 +1,7 @@
 index.html
 src/*/index.html
+outfile.json
+outfile_raw.txt
 *~
 *.swp
 node_modules

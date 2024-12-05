@@ -1,6 +1,6 @@
 module.exports = {
   launch: {
-    headless: false,
+    // headless: false,
   },
   server: {
     command: 'npm run build && npm run preview',
