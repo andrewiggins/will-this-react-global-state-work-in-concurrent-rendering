@@ -26,6 +26,8 @@ const libraries = {
   'react-query': '<a href="https://react-query.tanstack.com/">react-query</a>',
   'mobx-react-lite':
     '<a href="https://github.com/mobxjs/mobx-react-lite">mobx-react-lite</a>',
+  'tanstack-query':
+    '<a href="https://tanstack.com/query/latest">tanstack-query</a>',
 };
 
 const numTests = 10;
@@ -34,7 +36,7 @@ function wrap(content, tag) {
   return `<${tag}>${content}</${tag}>`;
 }
 function check(status) {
-  return status === 'failed' ? ':x:' : ':white_check_mark:';
+  return status === 'failed' ? '❌' : '✅';
 }
 
 // Get results into an array of test with a 2nd dimension by test/fail

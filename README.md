@@ -439,250 +439,250 @@ yarn jest:update
 <tr><th>Test</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
 	<tr>
 		<th><a href="https://react-redux.js.org">react-redux</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/pmndrs/zustand">zustand</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://react-tracked.js.org">react-tracked</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/diegohaz/constate">constate</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/dai-shi/react-hooks-global-state">react-hooks-global-state</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer, w/o useContextUpdate)</th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> (w/ useReducer)</th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/facebook/react/tree/master/packages/use-subscription">use-subscription</a> (w/ redux)</th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/apollographql/apollo-client">apollo-client</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://recoiljs.org">recoil</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://recoiljs.org">recoil (UNSTABLE)</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/pmndrs/jotai">jotai</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/dai-shi/use-atom">use-atom</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/pmndrs/valtio">valtio</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/zerobias/effector">effector</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://react-rxjs.org">react-rxjs</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/MrWolfZ/simplux">simplux</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://react-query.tanstack.com/">react-query</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 	<tr>
 		<th><a href="https://github.com/mobxjs/mobx-react-lite">mobx-react-lite</a></th>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:x:</td>
-		<td>:x:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
-		<td>:white_check_mark:</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>❌</td>
+		<td>❌</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
+		<td>✅</td>
 	</tr>
 
 </table>
