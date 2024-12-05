@@ -6,7 +6,7 @@ import {
 } from '@simplux/core';
 import { SimpluxProvider, useSimplux } from '@simplux/react';
 
-import { initialState, selectCount, createApp } from '../common';
+import { initialState, selectCount, renderApp } from '../common';
 
 const counterModule = createSimpluxModule({
   name: 'counter',
@@ -36,4 +36,4 @@ const useDouble = () => () => counter.double();
 
 const Root = ({ children }) => <SimpluxProvider>{children}</SimpluxProvider>;
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

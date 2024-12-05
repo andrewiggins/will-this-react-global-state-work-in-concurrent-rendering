@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const context = createContext(null);
@@ -30,4 +30,4 @@ const Root = ({ children }) => (
   </context.Provider>
 );
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

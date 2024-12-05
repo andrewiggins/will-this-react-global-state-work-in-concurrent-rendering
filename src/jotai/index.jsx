@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const globalState = atom(initialState);
@@ -40,4 +40,4 @@ const useDouble = () => {
 
 const Root = ({ children }) => <Provider>{children}</Provider>;
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

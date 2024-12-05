@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const store = createStore(reducer);
@@ -26,4 +26,4 @@ const useDouble = () => {
 
 const Root = ({ children }) => <Provider store={store}>{children}</Provider>;
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

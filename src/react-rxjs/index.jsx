@@ -8,7 +8,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const actions$ = new Subject();
@@ -25,4 +25,4 @@ const [useCount] = bind(
 const useIncrement = () => () => actions$.next(incrementAction);
 const useDouble = () => () => actions$.next(doubleAction);
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

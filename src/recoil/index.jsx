@@ -13,7 +13,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const globalState = atom({
@@ -50,4 +50,4 @@ const useDouble = () => {
 
 const Root = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

@@ -5,6 +5,7 @@ import React, {
   useTransition,
   useRef,
 } from 'react';
+import { createRoot } from 'react-dom/client';
 
 // block for about 20 ms
 const syncBlock = () => {
@@ -58,19 +59,35 @@ export const useCheckTearing = () => {
         document.title += ' TEARED';
       }
     } catch (e) {
-      // ignored
+      // Running this code before rendering the counts will throw an error. Ignore it.
+      if (
+        !e.message.includes(
+          "Cannot read properties of null (reading 'innerHTML')",
+        )
+      ) {
+        throw e;
+      }
     }
   });
 };
 
-export const createApp = (
+/**
+ * @param {() => number} useCount
+ * @param {() => () => void} useIncrement
+ * @param {() => () => void} useDouble
+ * @param {React.FC<{ children?: React.ReactNode }>} [Root]
+ * @param {(c: React.FC) => React.FC} [componentWrapper]
+ * @param {(c: React.FC) => React.FC} [mainWrapper]
+ * @returns {React.FC}
+ */
+function createApp(
   useCount,
   useIncrement,
   useDouble,
   Root = React.Fragment,
   componentWrapper = React.memo,
   mainWrapper = (fn) => fn,
-) => {
+) {
   const Counter = componentWrapper(() => {
     const count = useCount();
     syncBlock();
@@ -85,9 +102,9 @@ export const createApp = (
 
   const Main = mainWrapper(() => {
     const [isPending, startTransition] = useTransition();
-    const [mode, setMode] = useState(null);
+    const [mode, setMode] = useState('');
     const transitionHide = () => {
-      startTransition(() => setMode(null));
+      startTransition(() => setMode(''));
     };
     const transitionShowCounter = () => {
       startTransition(() => setMode('counter'));
@@ -103,6 +120,7 @@ export const createApp = (
     const transitionIncrement = () => {
       startTransition(increment);
     };
+    /** @type {React.MutableRefObject<any>} */
     const timer = useRef();
     const stopAutoIncrement = () => {
       clearInterval(timer.current);
@@ -176,4 +194,33 @@ export const createApp = (
   );
 
   return App;
-};
+}
+
+/** @type {(...args: Parameters<typeof createApp>) => void} */
+export function renderApp(
+  useCount,
+  useIncrement,
+  useDouble,
+  Root = React.Fragment,
+  componentWrapper = React.memo,
+  mainWrapper = (fn) => fn,
+) {
+  const App = createApp(
+    useCount,
+    useIncrement,
+    useDouble,
+    Root,
+    componentWrapper,
+    mainWrapper,
+  );
+
+  const domRoot = document.getElementById('app');
+  if (!domRoot) throw new Error('No root element found with id "app"');
+
+  // concurrent mode
+  const root = createRoot(domRoot);
+  root.render(<App />);
+
+  // sync mode
+  // ReactDOM.render(<App />, domRoot);
+}

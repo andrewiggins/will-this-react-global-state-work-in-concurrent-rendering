@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const store = createStore(reducer);
@@ -29,4 +29,4 @@ const useIncrement = () => () => store.dispatch(incrementAction);
 
 const useDouble = () => () => store.dispatch(doubleAction);
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

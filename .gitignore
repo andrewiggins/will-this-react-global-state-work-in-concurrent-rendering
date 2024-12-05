@@ -1,3 +1,5 @@
+index.html
+src/*/index.html
 *~
 *.swp
 node_modules

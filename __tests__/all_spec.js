@@ -40,7 +40,7 @@ const names = [
 names.forEach((name) => {
   describe(name, () => {
     beforeEach(async () => {
-      await page.goto(`http://localhost:${port}/${name}/index.html`);
+      await page.goto(`http://localhost:${port}/src/${name}/index.html`);
       await sleep(1000); // to make it stable
     });
 

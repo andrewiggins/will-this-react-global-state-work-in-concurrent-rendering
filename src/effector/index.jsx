@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const dispatch = createEvent();
@@ -21,4 +21,4 @@ const useIncrement = () => () => dispatch(incrementAction);
 
 const useDouble = () => () => dispatch(doubleAction);
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

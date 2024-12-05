@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const state = proxy(initialState);
@@ -30,4 +30,4 @@ const useDouble = () =>
     });
   }, []);
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

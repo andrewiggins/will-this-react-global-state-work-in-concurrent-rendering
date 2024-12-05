@@ -8,7 +8,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const state = observable(initialState);
@@ -35,7 +35,7 @@ const useDouble = () =>
     });
   }, []);
 
-export default createApp(
+renderApp(
   useCount,
   useIncrement,
   useDouble,

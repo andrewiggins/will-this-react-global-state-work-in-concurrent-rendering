@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const useValue = () => React.useReducer(reducer, initialState);
@@ -28,4 +28,4 @@ const useDouble = () => {
   return useCallback(() => dispatch(doubleAction), [dispatch]);
 };
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

@@ -14,7 +14,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const COUNT_QUERY = gql`
@@ -59,4 +59,4 @@ const Root = ({ children }) => (
   <ApolloProvider client={client}>{children}</ApolloProvider>
 );
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

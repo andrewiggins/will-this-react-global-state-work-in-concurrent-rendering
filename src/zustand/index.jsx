@@ -7,7 +7,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const useStore = create((set) => ({
@@ -29,4 +29,4 @@ const useDouble = () => {
   return useCallback(() => dispatch(doubleAction), [dispatch]);
 };
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

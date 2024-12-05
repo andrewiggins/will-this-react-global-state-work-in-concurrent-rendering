@@ -3,7 +3,8 @@ module.exports = {
     headless: false,
   },
   server: {
-    command: 'http-server dist',
+    command: 'npm run build && npm run preview',
     port: 8080,
+    launchTimeout: 10_000,
   },
 };

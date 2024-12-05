@@ -5,7 +5,7 @@ import {
   initialState,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const { dispatch, useGlobalState } = createStore(reducer, initialState);
@@ -19,4 +19,4 @@ const useIncrement = () => () => dispatch(incrementAction);
 
 const useDouble = () => () => dispatch(doubleAction);
 
-export default createApp(useCount, useIncrement, useDouble);
+renderApp(useCount, useIncrement, useDouble);

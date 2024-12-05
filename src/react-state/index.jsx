@@ -6,7 +6,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const StateCtx = createContext();
@@ -33,4 +33,4 @@ const Root = ({ children }) => {
   );
 };
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);

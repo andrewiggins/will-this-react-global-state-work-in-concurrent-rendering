@@ -12,7 +12,7 @@ import {
   selectCount,
   incrementAction,
   doubleAction,
-  createApp,
+  renderApp,
 } from '../common';
 
 const queryKey = ['counter'];
@@ -54,4 +54,4 @@ const Root = ({ children }) => (
   <QueryClientProvider client={client}>{children}</QueryClientProvider>
 );
 
-export default createApp(useCount, useIncrement, useDouble, Root);
+renderApp(useCount, useIncrement, useDouble, Root);
