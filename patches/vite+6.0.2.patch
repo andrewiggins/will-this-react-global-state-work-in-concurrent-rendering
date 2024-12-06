@@ -1,0 +1,44 @@
+diff --git a/node_modules/vite/dist/client/client.mjs b/node_modules/vite/dist/client/client.mjs
+index 6f80f8e..e734493 100644
+--- a/node_modules/vite/dist/client/client.mjs
++++ b/node_modules/vite/dist/client/client.mjs
+@@ -418,6 +418,8 @@ const normalizeModuleRunnerTransport = (transport) => {
+   };
+ };
+ const createWebSocketModuleRunnerTransport = (options) => {
++  if (!window.enableHMR) return null;
++
+   const pingInterval = options.pingInterval ?? 3e4;
+   let ws;
+   let pingIntervalId;
+@@ -759,7 +761,7 @@ const transport = normalizeModuleRunnerTransport(
+     return {
+       async connect(handlers) {
+         try {
+-          await wsTransport.connect(handlers);
++          await wsTransport?.connect(handlers);
+         } catch (e) {
+           if (!hmrPort) {
+             wsTransport = createWebSocketModuleRunnerTransport({
+@@ -770,7 +772,7 @@ const transport = normalizeModuleRunnerTransport(
+               pingInterval: hmrTimeout
+             });
+             try {
+-              await wsTransport.connect(handlers);
++              await wsTransport?.connect(handlers);
+               console.info(
+                 "[vite] Direct websocket connection fallback. Check out https://vite.dev/config/server-options.html#server-hmr to remove the previous connection error."
+               );
+@@ -794,10 +796,10 @@ Check out your Vite / network configuration and https://vite.dev/config/server-o
+         }
+       },
+       async disconnect() {
+-        await wsTransport.disconnect();
++        await wsTransport?.disconnect();
+       },
+       send(data) {
+-        wsTransport.send(data);
++        wsTransport?.send(data);
+       }
+     };
+   })()
