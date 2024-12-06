@@ -2,17 +2,22 @@ const fs = require('fs');
 
 const libraries = {
   'react-state': '<a href="https://react.dev/">raw react state</a>',
-  'react-redux': '<a href="https://react-redux.js.org">react-redux</a>',
-  'react-redux-connected':
-    '<a href="https://react-redux.js.org">react-redux-connected</a>',
-  'react-redux-v5':
-    '<a href="https://www.npmjs.com/package/react-redux/v/5.1.2">react-redux-v5</a>',
-  'react-redux-v6':
-    '<a href="https://www.npmjs.com/package/react-redux/v/6.0.1">react-redux-v6</a>',
-  'react-redux-v7':
-    '<a href="https://www.npmjs.com/package/react-redux/v/7.2.9">react-redux-v7</a>',
-  'react-redux-v8':
-    '<a href="https://www.npmjs.com/package/react-redux/v/8.1.3">react-redux-v8</a>',
+  'react-redux-hooks':
+    '<a href="https://react-redux.js.org">react-redux-hooks</a>',
+  'react-redux-v8-hooks':
+    '<a href="https://www.npmjs.com/package/react-redux/v/8.1.3">react-redux-v8-hooks</a>',
+  'react-redux-v7-hooks':
+    '<a href="https://www.npmjs.com/package/react-redux/v/7.2.9">react-redux-v7-hooks</a>',
+  'react-redux-connect':
+    '<a href="https://react-redux.js.org">react-redux-connect</a>',
+  'react-redux-v8-connect':
+    '<a href="https://www.npmjs.com/package/react-redux/v/8.1.3">react-redux-v8-connect</a>',
+  'react-redux-v7-connect':
+    '<a href="https://www.npmjs.com/package/react-redux/v/7.2.9">react-redux-v7-connect</a>',
+  'react-redux-v6-connect':
+    '<a href="https://www.npmjs.com/package/react-redux/v/6.0.1">react-redux-v6-connect</a>',
+  'react-redux-v5-connect':
+    '<a href="https://www.npmjs.com/package/react-redux/v/5.1.2">react-redux-v5-connect</a>',
   zustand: '<a href="https://github.com/pmndrs/zustand">zustand</a>',
   'react-tracked': '<a href="https://react-tracked.js.org">react-tracked</a>',
   constate: '<a href="https://github.com/diegohaz/constate">constate</a>',

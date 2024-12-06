@@ -1,14 +1,10 @@
-import { legacy_createStore } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { createStore } from 'redux-v3';
+import { Provider, connect } from 'react-redux-v5';
 
 import { createRoot } from 'react-dom/client';
-import { createConnectApp } from '../react-redux-connected/createConnectApp';
+import { createConnectApp } from '../react-redux-connect/createConnectApp';
 
-const App = createConnectApp({
-  createStore: legacy_createStore,
-  connect,
-  Provider,
-});
+const App = createConnectApp({ createStore, connect, Provider });
 
 const domRoot = document.getElementById('app');
 if (!domRoot) throw new Error('No root element found with id "app"');

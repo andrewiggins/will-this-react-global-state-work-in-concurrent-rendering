@@ -2,7 +2,7 @@ import { legacy_createStore } from 'redux-v4';
 import { Provider, connect } from 'react-redux-v8';
 
 import { createRoot } from 'react-dom/client';
-import { createConnectApp } from '../react-redux-connected/createConnectApp';
+import { createConnectApp } from '../react-redux-connect/createConnectApp';
 
 const App = createConnectApp({
   createStore: legacy_createStore,

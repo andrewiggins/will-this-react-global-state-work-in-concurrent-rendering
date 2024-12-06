@@ -34,12 +34,14 @@ jest.setTimeout(20 * 1000);
 
 const names = [
   'react-state',
-  'react-redux',
-  'react-redux-connected',
-  'react-redux-v5',
-  'react-redux-v6',
-  'react-redux-v7',
-  'react-redux-v8',
+  'react-redux-hooks',
+  'react-redux-v8-hooks',
+  'react-redux-v7-hooks',
+  'react-redux-connect',
+  'react-redux-v8-connect',
+  'react-redux-v7-connect',
+  // 'react-redux-v6-connect', // Temporary release that was quickly replaced by v7 due to perf issues
+  'react-redux-v5-connect',
   'preact-signals',
   // 'tanstack-query',
   // 'zustand',
