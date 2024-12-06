@@ -1,5 +1,5 @@
-import { legacy_createStore } from 'redux-v4';
-import { Provider, connect } from 'react-redux-v6';
+import { legacy_createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
 
 import { createRoot } from 'react-dom/client';
 import { createConnectApp } from '../react-redux-connected/createConnectApp';

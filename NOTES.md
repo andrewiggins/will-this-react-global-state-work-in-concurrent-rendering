@@ -1,4 +1,10 @@
-constate - delcare all selectors up front and create a provider per selector
-react-tracked - proxy state wrapper that uses use-context-selector to provide granular updates
-use-atom - combines use-context-selector with jotai atoms
-use-context-selector - runs selector inside the reducer of useReducer to enable bailing out by returning the prev state if the selector is the same. Manually tracks a version number to help with concurrent rendering I assume
+- constate
+  - declare all selectors up front and create a provider per selector
+- react-tracked
+  - proxy state wrapper that uses use-context-selector to provide granular updates
+- use-atom
+  - combines use-context-selector with jotai atoms
+- use-context-selector
+  - Interesting note: it runs selector inside the reducer of useReducer to enable bailing out by returning the prev state if the selector is the same. Manually tracks a version number to help with concurrent rendering I assume?
+- react-redux-v8
+  - Causes intermediate tearing because it cascades updates in a layout effect from first/parent connected components to each child connected components. For example with the app in this example: Initial `dispatch` calls `useSyncExternalStore` in `<Main>`, and Main, in a layout effect, calls `notifyNestedSubs`. Because this happens in a layout effect, `Main` will render and commit before `useSyncExternalStore` is called for nested `<Counter>` components. This could lead to tearing as parent components will be rendered and committed Child components, however React is already de-opting concurrent rendering when using `useSyncExternalStore` so it sync renders everything until all children have settled, but it is possible other complicated use case could cause visual tearing :/

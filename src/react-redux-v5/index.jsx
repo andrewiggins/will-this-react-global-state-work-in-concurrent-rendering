@@ -2,7 +2,7 @@ import { createStore } from 'redux-v3';
 import { Provider, connect } from 'react-redux-v5';
 
 import { createRoot } from 'react-dom/client';
-import { createConnectApp } from './createConnectApp';
+import { createConnectApp } from '../react-redux-connected/createConnectApp';
 
 const App = createConnectApp({ createStore, connect, Provider });
 

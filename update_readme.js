@@ -3,6 +3,8 @@ const fs = require('fs');
 const libraries = {
   'react-state': '<a href="https://react.dev/">raw react state</a>',
   'react-redux': '<a href="https://react-redux.js.org">react-redux</a>',
+  'react-redux-connected':
+    '<a href="https://react-redux.js.org">react-redux-connected</a>',
   'react-redux-v5':
     '<a href="https://www.npmjs.com/package/react-redux/v/5.1.2">react-redux-v5</a>',
   'react-redux-v6':

@@ -7,31 +7,66 @@ import {
   doubleAction,
   NUM_CHILD_COMPONENTS,
   useCheckTearing,
+  selectCount,
 } from '../common';
+
+/**
+ * @import {State, Action} from "../common"
+ * @import {Reducer, Store, Dispatch} from "redux-v3";
+ *
+ * Simplified redux types:
+ * @typedef {(reducer: Reducer<State>) => Store<State>} CreateStore
+ * @typedef {React.FC<{ store: Store; children: React.ReactNode; }>} Provider
+ * @typedef {(mapStateToProps: MapStateToProps, mapDispatchToProps?: MapDispatchToProps) => (component: React.FC<StateProps & DispatchProps>) => React.FC} Connect
+ */
 
 const ids = [...Array(NUM_CHILD_COMPONENTS).keys()];
 
+/**
+ * @typedef {{count: number}} StateProps
+ * @typedef {(state: State) => StateProps} MapStateToProps
+ * @type {MapStateToProps}
+ */
 function mapStateToProps(state) {
-  return { count: state.count };
+  console.log('mapStateToProps', state);
+  return { count: selectCount(state) };
 }
 
+/**
+ * @typedef {{increment(): void; doDouble(): void;}} DispatchProps
+ * @typedef {(dispatch: Dispatch<Action>) => DispatchProps} MapDispatchToProps
+ * @type {MapDispatchToProps}
+ */
 function mapDispatchToProps(dispatch) {
   return {
-    increment: () => dispatch(incrementAction),
-    doDouble: () => dispatch(doubleAction),
+    increment() {
+      console.group('increment');
+      dispatch(incrementAction);
+      console.groupEnd();
+    },
+    doDouble() {
+      console.group('doDouble');
+      dispatch(doubleAction);
+      console.groupEnd();
+    },
   };
 }
 
-/** @type {(...args: any[]) => React.FC} */
+/**
+ * @param {{ createStore: CreateStore; connect: Connect; Provider: Provider }} props
+ * @returns {React.FC<{}>}
+ */
 export function createConnectApp({ createStore, connect, Provider }) {
   const store = createStore(reducer);
 
   const Counter = connect(mapStateToProps)(({ count }) => {
+    console.log('Counter', count);
     syncBlock();
     return <div className="count">{count}</div>;
   });
 
   const DeferredCounter = connect(mapStateToProps)(({ count }) => {
+    console.log('DeferredCounter', count);
     const deferredCount = useDeferredValue(count);
     syncBlock();
     return <div className="count">{deferredCount}</div>;
@@ -41,6 +76,8 @@ export function createConnectApp({ createStore, connect, Provider }) {
     mapStateToProps,
     mapDispatchToProps,
   )(({ count, increment, doDouble }) => {
+    console.log('Main', count);
+
     const [isPending, startTransition] = useTransition();
     const [mode, setMode] = useState('');
     const transitionHide = () => {
@@ -55,7 +92,9 @@ export function createConnectApp({ createStore, connect, Provider }) {
     const deferredCount = useDeferredValue(count);
     useCheckTearing();
     const transitionIncrement = () => {
+      console.group('transitionIncrement');
       startTransition(increment);
+      console.groupEnd();
     };
     /** @type {React.MutableRefObject<any>} */
     const timer = useRef();
